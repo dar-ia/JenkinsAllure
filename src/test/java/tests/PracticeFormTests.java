@@ -30,8 +30,7 @@ public class PracticeFormTests extends TestBase {
     @DisplayName("Form is filled fully")
     @Tags({
             @Tag("POSITIVE"),
-            @Tag("E2E"),
-            @Tag("GOLD")
+            @Tag("E2E")
     })
     void verifyFullInformationTest() {
         firstName = testData.generateFirstName();
@@ -86,8 +85,7 @@ public class PracticeFormTests extends TestBase {
     @Test
     @DisplayName("Form is filled with minimal required information")
     @Tags({
-            @Tag("POSITIVE"),
-            @Tag("E2E")
+            @Tag("POSITIVE")
     })
     void verifyMinimalInformationTest() {
         firstName = testData.generateFirstName();

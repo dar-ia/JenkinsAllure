@@ -40,3 +40,28 @@ dependencies{
 test {
     useJUnitPlatform()
 }
+tasks.withType(Test) {
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+task run_positive_cases(type: Test){
+    useJUnitPlatform{
+        includeTags("POSITIVE")
+    }
+}
+task run_e2e_cases(type: Test){
+    useJUnitPlatform{
+        includeTags("E2E")
+    }
+}
+task run_negative_cases(type: Test){
+    useJUnitPlatform{
+        includeTags("NEGATIVE")
+    }
+}
