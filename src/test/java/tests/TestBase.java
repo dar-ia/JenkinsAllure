@@ -18,11 +18,12 @@ public class TestBase {
     @BeforeAll
     static void commonConfig() {
         String baseUrl = System.getProperty("baseUrl", "defaultUrl");
+        String remote = System.getProperty("remote", "defaultUrl");
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = baseUrl;
         //Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1280x1024";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://user1:1234@"+remote+"/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
