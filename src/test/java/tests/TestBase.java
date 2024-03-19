@@ -17,18 +17,18 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class TestBase {
     @BeforeAll
     static void commonConfig() {
-        String baseUrl = System.getProperty("baseUrl", "defaultUrl");
-        String remote = System.getProperty("remote", "defaultUrl");
-        String browser = System.getProperty("browser", "defaultUrl");
-        String version = System.getProperty("version", "defaultUrl");
 
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.baseUrl = baseUrl;
-        Configuration.browser=browser;
-        Configuration.browserVersion=version;
+
+
+
+
+        Configuration.pageLoadStrategy =  System.getProperty("baseUrl", "defaultUrl");
+        Configuration.baseUrl = System.getProperty("remote", "defaultUrl");
+        Configuration.browser=System.getProperty("browser", "defaultUrl");
+        Configuration.browserVersion=System.getProperty("version", "defaultUrl");
         //Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = "1280x1024";
-        Configuration.remote = "https://user1:1234@"+remote+"/wd/hub";
+        Configuration.browserSize = System.getProperty("resolution", "defaultUrl");
+        Configuration.remote = "https://user1:1234@"+System.getProperty("baseUrl", "defaultUrl")+"/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
