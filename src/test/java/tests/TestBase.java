@@ -19,8 +19,13 @@ public class TestBase {
     static void commonConfig() {
         String baseUrl = System.getProperty("baseUrl", "defaultUrl");
         String remote = System.getProperty("remote", "defaultUrl");
+        String browser = System.getProperty("browser", "defaultUrl");
+        String version = System.getProperty("version", "defaultUrl");
+
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = baseUrl;
+        Configuration.browser=browser;
+        Configuration.browserVersion=version;
         //Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1280x1024";
         Configuration.remote = "https://user1:1234@"+remote+"/wd/hub";
