@@ -1,11 +1,9 @@
 package helpers;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import tests.TestBase;
 
 import java.net.MalformedURLException;
 import java.net.URL;
