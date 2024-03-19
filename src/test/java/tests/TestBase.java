@@ -17,8 +17,9 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class TestBase {
     @BeforeAll
     static void commonConfig() {
+        String baseUrl = System.getProperty("baseUrl", "defaultUrl");
         Configuration.pageLoadStrategy = "eager";
-        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.baseUrl = baseUrl;
         //Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1280x1024";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
