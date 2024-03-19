@@ -113,7 +113,7 @@ public class PractiveFormPageObject {
         return this;
     }
 
-    @Step("Assert record in table result")
+    @Step("Assert key {key} is equal to {value} in table result")
     public PractiveFormPageObject assertTableRecord(String key, String value) {
         TableResultComponent result = new TableResultComponent();
         result.assertRecord(key, value);
