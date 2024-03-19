@@ -28,7 +28,7 @@ public class TestBase {
         Configuration.browserVersion=System.getProperty("version", "defaultUrl");
 //        Configuration.holdBrowserOpen = true;
         Configuration.browserSize = System.getProperty("resolution", "defaultUrl");
-        Configuration.remote = "https://user1:1234@"+System.getProperty("baseUrl", "defaultUrl")+"/wd/hub";
+        Configuration.remote = "https://user1:1234@"+System.getProperty("remote", "defaultUrl")+"/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
