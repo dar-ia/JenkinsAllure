@@ -25,7 +25,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = baseUrl;
         Configuration.browser=browser;
-        Configuration.browserVersion=version;
+        //Configuration.browserVersion=version;
         //Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1280x1024";
         Configuration.remote = "https://user1:1234@"+remote+"/wd/hub";
