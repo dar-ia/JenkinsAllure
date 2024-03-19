@@ -25,9 +25,9 @@ public class TestBase {
         Configuration.pageLoadStrategy =  System.getProperty("baseUrl", "defaultUrl");
         Configuration.baseUrl = System.getProperty("remote", "defaultUrl");
         Configuration.browser=System.getProperty("browser", "defaultUrl");
-       // Configuration.browserVersion=System.getProperty("version", "defaultUrl");
+        Configuration.browserVersion=System.getProperty("version", "defaultUrl");
         //Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = System.getProperty("resolution", "defaultUrl");
+        //Configuration.browserSize = System.getProperty("resolution", "defaultUrl");
         Configuration.remote = "https://user1:1234@"+System.getProperty("baseUrl", "defaultUrl")+"/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
