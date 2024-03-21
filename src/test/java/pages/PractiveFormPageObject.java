@@ -40,6 +40,11 @@ public class PractiveFormPageObject {
         open("/automation-practice-form");
         return this;
     }
+    public  PractiveFormPageObject closeBanners(){
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#fixedban').remove()");
+        return this;
+    }
 
     @Step("Set fist name")
     public PractiveFormPageObject setFistName(String firstName) {

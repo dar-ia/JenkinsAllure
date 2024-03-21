@@ -47,7 +47,8 @@ public class PracticeFormTests extends TestBase {
         birthDay = testData.generateDay(birthMonth);
         state = testData.generateState();
         city = testData.generateCity(state);
-        page.openPage();
+        page.openPage()
+                .closeBanners();
 
         page.assertPageTitle("Student Registration Form");
 
@@ -94,6 +95,7 @@ public class PracticeFormTests extends TestBase {
         userGender = testData.generateGender();
 
         page.openPage()
+                .closeBanners()
                 .assertPageTitle("Student Registration Form");
 
 
@@ -124,6 +126,7 @@ public class PracticeFormTests extends TestBase {
         userPhoneNumber = testData.generateUserPhone();
 
         page.openPage()
+                .closeBanners()
                 .assertPageTitle("Student Registration Form");
 
         page.setFistName(firstName)

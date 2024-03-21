@@ -34,13 +34,6 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
-    @BeforeEach
-    void beforeEachConfig() {
-
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#fixedban').remove()");
-    }
-
     @AfterEach
     void afterEachConfig() {
         Attach.screenshotAs("Last screen");
