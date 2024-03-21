@@ -38,8 +38,6 @@ public class PractiveFormPageObject {
     @Step("Open page")
     public PractiveFormPageObject openPage() {
         open("/automation-practice-form");
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#fixedban').remove()");
         return this;
     }
 
