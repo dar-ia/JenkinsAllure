@@ -1,15 +1,14 @@
 package tests;
 
 import org.junit.jupiter.api.*;
-import pages.PractiveFormPageObject;
+import pages.PracticeFormPage;
 import utils.TestDataGeneration;
 
 @DisplayName("Set of tests for practice form")
 public class PracticeFormTests extends TestBase {
 
-    PractiveFormPageObject page = new PractiveFormPageObject();
+    PracticeFormPage page = new PracticeFormPage();
     TestDataGeneration testData = new TestDataGeneration();
-
     String firstName,
             lastName,
             userEmail,
@@ -24,7 +23,6 @@ public class PracticeFormTests extends TestBase {
             birthDay,
             birthMonth,
             birthYear;
-
 
     @Test
     @DisplayName("Form is filled fully")
@@ -48,12 +46,9 @@ public class PracticeFormTests extends TestBase {
         state = testData.generateState();
         city = testData.generateCity(state);
         page.openPage()
-                .closeBanners();
-
-        page.assertPageTitle("Student Registration Form");
-
-        //fill in registration form
-        page.setFistName(firstName)
+                .closeBanners()
+                .assertPageTitle("Student Registration Form")
+                .setFistName(firstName)
                 .setLastName(lastName)
                 .setUserEmail(userEmail)
                 .setUserNumber(userPhoneNumber)
@@ -65,7 +60,6 @@ public class PracticeFormTests extends TestBase {
                 .uploadFie(fileName)
                 .setStateAndCity(state, city)
                 .submitForm();
-
 
         //Do assertions
         page.assertTableTitle("Thanks for submitting the form")
@@ -96,18 +90,13 @@ public class PracticeFormTests extends TestBase {
 
         page.openPage()
                 .closeBanners()
-                .assertPageTitle("Student Registration Form");
-
-
-        //fill in registration form
-        page.setFistName(firstName)
+                .assertPageTitle("Student Registration Form")
+                .setFistName(firstName)
                 .setLastName(lastName)
                 .setUserNumber(userPhoneNumber)
                 .setGender(userGender)
                 .submitForm();
 
-
-        //Do assertions
         page.assertTableTitle("Thanks for submitting the form")
                 .assertTableRecord("Student Name", firstName + " " + lastName)
                 .assertTableRecord("Gender", userGender)
@@ -134,7 +123,6 @@ public class PracticeFormTests extends TestBase {
                 .setUserNumber(userPhoneNumber)
                 .submitForm()
                 .assertPageTitle("Student Registration Form");
-
 
     }
 
