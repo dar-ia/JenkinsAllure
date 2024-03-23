@@ -66,3 +66,9 @@ task run_negative_cases(type: Test){
         includeTags("NEGATIVE")
     }
 }
+
+task run_full_scope(type: Test){
+    useJUnitPlatform{
+        includeTags("INSCOPE")
+    }
+}
